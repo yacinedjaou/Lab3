@@ -15,7 +15,7 @@ public class AddressBook {
 
 
     public static void main(String[] args) {
-        BuddyInfo buddy = new BuddyInfo("Yacine", "Djaou", "Ottawa", "2342342342", "sdahfjkl@gmail.com");
+        BuddyInfo buddy = new BuddyInfo("Yacine", "Djaou", "Toronto", "2342342342", "sdahfjkl@gmail.com");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
         addressBook.removeBuddy(0);

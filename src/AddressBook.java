@@ -35,4 +35,16 @@ public class AddressBook {
         }
         return null;
     }
+
+    public BuddyInfo removeBuddyByName(String firstName, String lastName) {
+        for (int i = 0; i < buddies.size(); i++) {
+            if (buddies[i].getFullName() == firstName + " " + lastName) {
+                return buddies.remove(buddies[i]);
+            }
+        }
+
+        return null;
+    }
+
+
 }

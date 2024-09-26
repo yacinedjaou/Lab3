@@ -4,22 +4,35 @@ import java.util.Objects;
 public class AddressBook {
     ArrayList<BuddyInfo> buddies = new ArrayList<>();
 
+
+    public AddressBook() {
+    }
+
+
+    public AddressBook(ArrayList<BuddyInfo> buddies) {
+        this.buddies = buddies;
+    }
+
+
     public static void main(String[] args) {
-        BuddyInfo buddy = new BuddyInfo("Yacine","Djaou","Ottawa","2342342342","sdahfjkl@gmail.com");
+        BuddyInfo buddy = new BuddyInfo("Yacine", "Djaou", "Ottawa", "2342342342", "sdahfjkl@gmail.com");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
-        addressBook.removeBuddy("Yacine","Djaou");
+        addressBook.removeBuddy(0);
+
     }
 
-    public void addBuddy(BuddyInfo buddy){
-        buddies.add(buddy);
-    }
 
-    public void removeBuddy(String firstName, String lastName){
-        for(BuddyInfo buddy: buddies){
-            if(Objects.equals(buddy.getFullName(), firstName + " " + lastName)){
-                buddies.remove(buddy);
-            }
+    public void addBuddy(BuddyInfo buddy) {
+        if (buddy != null) {
+            buddies.add(buddy);
         }
+    }
+
+    public BuddyInfo removeBuddy(int index) {
+        if (index >= 0 && index <= buddies.size()) {
+            return buddies.remove(index);
+        }
+        return null;
     }
 }
